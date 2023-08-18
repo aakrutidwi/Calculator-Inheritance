@@ -1,17 +1,14 @@
 
-function OperationBtn(title2) {
+function OperationBtn(title) {
     console.log("In Operation controller")
 
-    console.log(title2)
-
-    this.model = new opModel();
-    this.view = new opView(title2);
-
-    this.operationBtn = this.view.getWidget();
-    console.log("widget element" + this.operationBtn);
-  
-    this.getWidget = function () {
-      console.log("In getwidget of function ctrl");
-      return this.operationBtn;
+    this.init = function() {
+      this.model = new opModel();
+      this.view = new opView(title);  
+    }
+    Button.call(title);
     };
-}
+
+    OperationBtn.prototype = Object.create(OperationBtn);
+    OperationBtn.prototype.constructor = OperationBtn;
+

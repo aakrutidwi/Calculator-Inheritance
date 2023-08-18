@@ -28,6 +28,7 @@ function Calculator() {
       var funCtrl = new FuncBtn(this.model.funcArray[k]);
       var functionBtn = funCtrl.getWidget();
       this.view.setFuncWidget(functionBtn);
+      console.log("functionBtn==>",functionBtn)
       /////Add Event Listener
       this.addEvent(functionBtn, this.model.funcArray[k]);
     }
@@ -91,34 +92,19 @@ function Calculator() {
 
   this.addEvent = function (btn, title) {
     this.title = title;
+    console.log("btn=====",btn)
     btn.addEventListener("click", () => {
         
-     (function (title){
-      return function () {
-        onNumButtonClick(title)
-      }
-     }) 
-      
-      
-    (function (title){
-      return function () {
+      if (this.model.numArray.includes(title)) {
+        onNumButtonClick(title);
+      } else if (this.model.funcArray.includes(title)) {
         onFunctionclick(title);
-      }
-     }) 
-
-   
-
-    (function (title){
-      return function () {
+      } else if (this.model.operationArray.includes(title)) {
         onOperationclick(title);
       }
-     }) 
-
-
-   
-    
     });
   };
+
 
   this.init();
 }

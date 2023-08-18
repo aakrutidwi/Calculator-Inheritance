@@ -6,22 +6,17 @@ function FuncView(title) {
 
      this.init = function(){
         console.log("In init function")
-        this.functionBtn = null;
         this.setWidget();
-     }
-
-     this.getWidget = function(){
-        console.log("in getWidget in funcview")
-        return this.functionBtn;
      }
 
      this.setWidget = function(){
         console.log("in setWidget FuncVeiw")
-         this.functionBtn = document.createElement("button");
-        this.functionBtn.innerHTML =title;
-     
      }
 
-     this.init();
+Button.call();
+
 }
 
+
+FuncView.prototype = Object.create(Button.prototype);
+FuncView.prototype.constructor = FuncView;

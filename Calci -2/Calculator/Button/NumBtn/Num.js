@@ -1,17 +1,14 @@
 
-function NumBtn(title1) {
-  console.log("In NumBtn controller");
 
-  console.log(title1);
+function NumBtn(title) {
+  console.log("In Operation controller")
 
-  this.model = new numModel();
-  this.view = new numView(title1);
-
-  this.numberBtn = this.view.getWidget();
-  console.log("widget element" + this.numberBtn);
-
-  this.getWidget = function () {
-    console.log("In getwidget of function ctrl");
-    return this.numberBtn;
+  this.init = function() {
+    this.model = new numModel();
+    this.view = new numView(title);  
   }
-}
+  Button.call(this,title);
+  };
+
+  NumBtn.prototype = Object.create(Button.prototype);
+  NumBtn.prototype.constructor = NumBtn;

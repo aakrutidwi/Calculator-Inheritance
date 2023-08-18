@@ -15,7 +15,7 @@ function CalVeiw() {
   this.setWidget = function () {
     console.log("in setWidget CalVeiw");
     this.container = document.getElementById("calc-2");
-    console.log(this.container);
+    console.log("this.container",this.container);
 
     this.btnContainer = document.createElement("div");
     this.btnContainer.className = " btnscontainer";
