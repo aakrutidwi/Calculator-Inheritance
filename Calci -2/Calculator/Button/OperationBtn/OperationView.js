@@ -2,19 +2,18 @@
 // operationContainer.className = "operationContainer";
 
 function opView(title) {
-    console.log("in op view")
-
-    
+    console.log("6 in operation view",title)
     this.init = function(){
+        console.log("11. In init function-- this is the overidden method of button init")
         console.log("In init function")
         this.setWidget();
-    }
+    } 
 
     this.setWidget = function(){
-        console.log("in setWidget OperationVeiw");
+        console.log(" 12 in setWidget OperationVeiw");
     }
-Button.call();
+ButtonView.call(this,title);
 }
 
-opView.prototype = Object.create(Button.prototype);
+opView.prototype = Object.create(ButtonView.prototype);
 opView.prototype.constructor = opView;

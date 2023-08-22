@@ -1,5 +1,7 @@
-function CalVeiw() {
-  this.init = function () {
+function CalVeiw(id,elementId,options) {
+  this.init = function (id,elementId,options) {
+    this.id = id;
+    this.options = options;
     console.log("in  init CalVeiw ");
     this.container = null;
     console.log("In calci view");
@@ -59,10 +61,5 @@ function CalVeiw() {
    this.operationContainer.append(operationBtn);
   }
 
-
-
-
-
-
-  this.init();
+  this.init(id,elementId,options);
 }

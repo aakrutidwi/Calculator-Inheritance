@@ -1,13 +1,21 @@
-function Calculator() {
+/**
+ * 
+ * @param {calc-1} id 
+ * @param {calc} elementId 
+ * @param {null} options 
+ */
+
+function Calculator(id,elementId,options) {
+
   console.log("In Calc controller");
 
-  this.init = function () {
+  this.init = function (id,elementId,options) {
     console.log("In init Calc controller");
-    this.model = new CalcModel();
+    this.model = new CalcModel(id,options);
 
     console.log(document);
 
-    this.view = new CalVeiw();
+    this.view = new CalVeiw(id,elementId,options);
     this.widgetElement = this.view.getWidget();
     console.log("=========>" + this.widgetElement);
 
@@ -39,6 +47,7 @@ function Calculator() {
       var NumCtrl = new NumBtn(this.model.numArray[i]);
       var numberBtn = NumCtrl.getWidget();
       this.view.setNumWidget(numberBtn);
+      console.log("NumericBtn==>",numberBtn)
       this.addEvent(numberBtn, this.model.numArray[i]);
     }
 
@@ -48,8 +57,8 @@ function Calculator() {
       console.log("kkkkkkkkkkkkkkkkk", this.model.operationArray[j]);
       var OperationCtrl = new OperationBtn(this.model.operationArray[j]);
       var operationBtn = OperationCtrl.getWidget();
-      console.log("ttttttttt",operationBtn)
       this.view.setOperationWidget(operationBtn);
+      console.log("OperationBtn==>",operationBtn)
 
       this.addEvent(operationBtn, this.model.operationArray[j]);
     }
@@ -106,5 +115,5 @@ function Calculator() {
   };
 
 
-  this.init();
+  this.init(id,elementId,options);
 }
