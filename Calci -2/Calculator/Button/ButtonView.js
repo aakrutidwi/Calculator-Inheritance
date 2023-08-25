@@ -1,23 +1,35 @@
-var ButtonView = function(title){
+var ButtonView = function(title,id,options){
     console.log(" 7 . in button view",title)
+console.log("????????",options)
+
+   
+
     
-    this._init = function (title){
+    this._init = function (title,id,options){
+
+        console.log("????????",options)
         console.log(" 8. buttonview init")
         this.WidgetElement = null;
-        this._setWidget(title);
+        this._setWidget(title,id,options);
         console.log(" 10. back from setWidget")
-        this.init();
+        this.init(title,id,options);
     }
 
 
-    this._setWidget = function(title){
+    this._setWidget = function(title,id,options){
+    
         console.log("9 . in ButtonView setWidget")
         console.log("all the logic common to every button goes here....")
         this.WidgetElement = document.createElement("button");
         console.log("---------",this.WidgetElement);
         this.WidgetElement.innerHTML=title;
         console.log("+++++++++",this.WidgetElement);
-        this.WidgetElement.setAttribute("class","nikkk");
+        console.log(id);
+        this.WidgetElement.setAttribute("id",options.btnId);
+        this.WidgetElement.setAttribute("className",options.className);
+        
+    
+
     }
 
     this.getWidget= function(){
@@ -26,7 +38,7 @@ var ButtonView = function(title){
     }
 
 
-    this._init(title);
+    this._init(title,id,options);
 }
 
 

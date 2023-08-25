@@ -1,11 +1,12 @@
-function Button (title){
+function Button (title,id,options){
     console.log(" 2. Button controller")
 console.log(title)
-    this._init = function(){
+console.log(options)
+    this._init = function(title,id,options){
         console.log(" 3. in init Button controller")
-        this.init(title);
+        this.init(title,id,options);  // calling overridden mehtod
         }
-        this._init();
+        this._init(title,id,options);
 }
 
 

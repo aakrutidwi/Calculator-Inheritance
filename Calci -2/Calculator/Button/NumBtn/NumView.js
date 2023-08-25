@@ -2,18 +2,18 @@
 //     numContainer.className = "numContainer";
 
 
-function numView(title) {
+function numView(title,id,options) {
     console.log(" 6 In Numbtn View" , title)
-     this.init = function(){
+     this.init = function(id,options){
       console.log("11. In init function-- this is the overidden method of button init")
-       this.setWidget();
+       this.setWidget(id,options); 
      }
-
+ 
  
      this.setWidget = function(){
         console.log("12 .in setWidgetNumVeiw")
      }
-   ButtonView.call(this,title);
+   ButtonView.call(this,title,id,options);
 }
 
 

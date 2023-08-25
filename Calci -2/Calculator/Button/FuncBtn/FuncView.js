@@ -1,12 +1,12 @@
 // var funcContainer = document.createElement("div");
 // funcContainer.className = "funcContainer";
 
-function FuncView(title) {
+function FuncView(title,id,options) {
     console.log(" 6 . In Func View",title)
 
-     this.init = function(){
+     this.init = function(id,options){
         console.log("11. In init function-- this is the overidden method of button init")
-        this.setWidget();
+        this.setWidget(id,options);
      }
 
      this.setWidget = function(){
@@ -14,7 +14,7 @@ function FuncView(title) {
         console.log("here we will implement function btn specific logic")
      }
 
-ButtonView.call(this,title);
+ButtonView.call(this,title,id,options);
 
 
 }
